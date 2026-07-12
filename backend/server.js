@@ -1,9 +1,10 @@
 import express from "express";
+import dotenv from "dotenv";
 import {connectToMongoDB} from "./database.js";
 import addbookRouter from "./routes/book.routes.js"
 const port = 3000;
 const app = express();
-
+dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 connectToMongoDB();
